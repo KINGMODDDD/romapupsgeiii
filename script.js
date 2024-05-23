@@ -1,26 +1,21 @@
-document.getElementById('loginBtn').addEventListener('click', function() {
-const username = document.getElementById('username').value;
-const password = document.getElementById('password').value;
+function login() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
 
-if (username === 'Geimod' && password === 'Yagei') {
-document.querySelector('.login-container').style.display = 'none';
-document.querySelector('.container').style.display = 'block';
-} else {
-document.getElementById('loginError').style.display = 'block';
+    if (username === 'Teke_Love' && password === 'Romagei') {
+        document.getElementById('auth-container').style.display = 'none';
+        document.getElementById('generate-panel').style.display = 'flex';
+    } else {
+        alert('Неправильный ник или пароль.');
+    }
 }
-});
 
-document.getElementById('generateBtn').addEventListener('click', function() {
-const key = generateKey(50);
-document.getElementById('keyOutput').value = key;
-});
-
-function generateKey(length) {
-const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-let key = '';
-for (let i = 0; i < length; i++) {
-const randomIndex = Math.floor(Math.random() * chars.length);
-key += chars[randomIndex];
-}
-return key;
+function generateKey() {
+    var key = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < 50; i++) {
+        key += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    document.getElementById('key').value = key;
 }

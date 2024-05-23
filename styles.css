@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://i.postimg.cc/vZ21TT0H/e-Kv-KAImlt-S0.webp');
+    background-size: cover;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    display: none;
+}
+
+#generate-panel {
+    background-image: url('https://i.postimg.cc/L85XcRmd/8-Rr-Ra-CYesp0.webp');
+} 
