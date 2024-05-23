@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Авторизация</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="auth-container" class="container">
+<h2>Авторизация</h2>
+<form id="login-form">
+<input type="text" id="username" placeholder="Ник">
+
+
+<input type="password" id="password" placeholder="Пароль">
+
+
+<button type="button" onclick="login()">Войти</button>
+</form>
+</div>
+
+<div id="generate-panel" class="container">
+<h2>Панель с ключами</h2>
+<button onclick="generateKey()">Сгенерировать ключ</button>
+
+
+<textarea id="key" rows="3" cols="30" readonly></textarea>
+</div>
+
+<script>
+function login() {
+var username = document.getElementById('username').value;
+var password = document.getElementById('password').value;
+
+if (username === 'Teke_Love' && password === 'Romagei') {
+document.getElementById('auth-container').style.display = 'none';
+document.getElementById('generate-panel').style.display = 'flex';
+} else {
+alert('Неправильный ник или пароль.');
+}
+}
+
+function generateKey() {
+var key = '';
+var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+var charactersLength = characters.length;
+for (var i = 0; i < 45; i++) {
+key += characters.charAt(Math.floor(Math.random() * charactersLength));
+}
+document.getElementById('key').value = key;
+}
+</script>
+</body>
+</html>
